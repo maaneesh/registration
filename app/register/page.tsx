@@ -24,7 +24,7 @@ const RegisterPage = () => {
 
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     console.log("value", value);
     setFormData((prevData) => ({
@@ -32,7 +32,7 @@ const RegisterPage = () => {
       [name]: value,
     }));
   };
-  const handleSubmit = (e: { preventDefault: any }) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const existingUsers = JSON.parse(
