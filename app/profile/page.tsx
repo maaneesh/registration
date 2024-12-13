@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import RegisterPage from "../register/page";
 import { useRouter } from "next/navigation";
 
 // Define interface for form data

@@ -22,13 +22,7 @@ const INITIAL_FORM_DATA: FormData = {
 const RegisterPage = () => {
   const router = useRouter();
 
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    birthday: "",
-    phone: "",
-    email: "",
-  });
+  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;
@@ -48,8 +42,9 @@ const RegisterPage = () => {
     localStorage.setItem("userRegistrationData", JSON.stringify(updatedUsers));
 
     console.log("Form Data Submitted:", formData);
+    setFormData(INITIAL_FORM_DATA);
+
     router.push("/profile");
-    // setFormData(INITIAL_FORM_DATA);
   };
   return (
     <div className="flex items-center justify-center text-black  min-h-screen bg-gray-100">
